@@ -12,7 +12,7 @@ interface ProductGridProps {
 const ProductGrid: React.FC<ProductGridProps> = ({ products, loading = false }) => {
   if (loading) {
     return (
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {Array(6).fill(0).map((_, index) => (
           <ProductCardSkeleton key={index} />
         ))}
@@ -22,14 +22,15 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, loading = false }) 
 
   if (products.length === 0) {
     return (
-      <div className="text-center py-16">
+      <div className="text-center py-16 bg-white border border-klinkara-secondary p-8 shadow-sm">
         <p className="text-lg text-gray-500">No products found</p>
+        <p className="text-sm text-gray-400 mt-2">Try adjusting your filters or browse our categories</p>
       </div>
     );
   }
 
   return (
-    <div className="grid grid-cols-2 gap-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
