@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import HeroCarousel from '@/components/HeroCarousel';
@@ -46,31 +47,30 @@ const Home = () => {
 
       <Testimonials />
       
-      <section className="py-16 bg-white border-b-2 border-klinkara-primary/20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 border-b-2 border-klinkara-primary/30 pb-4">
-            Follow Us on Instagram
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <section className="py-12 px-6 bg-white">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="section-title text-center mb-8">Follow Us on Instagram</h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
             {Array(4).fill(0).map((_, index) => (
-              <a
-                key={index}
-                href="#"
-                className="group relative overflow-hidden aspect-square border-2 border-klinkara-primary/20"
-              >
+              <a href="#" key={index} className="relative group block h-40">
                 <img 
-                  src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3" 
+                  src={`https://images.unsplash.com/photo-1610030${index + 1}67685-f39cf8b3e807?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3`} 
                   alt="Instagram post" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                <div className="absolute inset-0 bg-klinkara-primary bg-opacity-0 group-hover:bg-opacity-30 flex items-center justify-center transition-all duration-300">
                   <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    View Post
+                    @klinkaaraofficial
                   </span>
                 </div>
               </a>
             ))}
           </div>
+          
+          <a href="#" className="inline-block mt-8 border border-klinkara-primary text-klinkara-primary px-6 py-2 hover:bg-klinkara-primary hover:text-white transition-colors duration-300">
+            Follow Us
+          </a>
         </div>
       </section>
       

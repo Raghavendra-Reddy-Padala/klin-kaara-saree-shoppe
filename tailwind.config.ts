@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -65,8 +66,8 @@ export default {
 				// Brand colors
 				klinkara: {
 					primary: '#E27D60', // Terracotta Sunset
-					secondary: '#F5F5F5', // Light Gray for subtle borders
-					neutral: '#FFFFFF', // Pure White
+					secondary: '#E8A87C', // Saffron Gold
+					neutral: '#F9F7F7', // Ivory Silk
 					accent: '#41B3A3', // Deep Peacock
 					text: '#1D3557', // Rich Indigo
 				}
