@@ -78,9 +78,9 @@ const Checkout = () => {
       // Create order data
       const orderData = {
         items: cartItems.map(item => ({
-          productId: item.id,
+          productId: item.product.id,
           quantity: item.quantity,
-          price: item.price
+          price: item.product.price
         })),
         shippingDetails,
         deliveryMethod,
