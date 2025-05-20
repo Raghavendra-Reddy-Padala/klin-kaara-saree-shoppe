@@ -1,46 +1,50 @@
+
 import React from 'react';
 import { X } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 interface PromotionalBannerProps {
   onClose: () => void;
-  banner: {
-    imageUrl: string;
-    title: string;
-    description: string;
-    link: string;
-    buttonText: string;
-  };
 }
 
-const PromotionalBanner = ({ onClose, banner }: PromotionalBannerProps) => {
+const PromotionalBanner = ({ onClose }: PromotionalBannerProps) => {
   return (
-    <div className="w-full bg-white border-b-2 border-klinkara-primary/20">
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          {/* Image Section */}
-          <div className="w-full md:w-1/2">
-            <img
-              src={banner.imageUrl}
-              alt={banner.title}
-              className="w-full h-[300px] object-cover rounded-none border-2 border-klinkara-primary/20"
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 backdrop-blur-sm animate-fade-in">
+      <div className="bg-white border border-klinkara-secondary w-full max-w-md p-6 relative animate-scale-in">
+        <button 
+          onClick={onClose}
+          className="absolute top-3 right-3 text-klinkara-text hover:text-klinkara-primary transition-colors"
+          aria-label="Close promotional banner"
+        >
+          <X size={24} />
+        </button>
+        
+        <div className="text-center">
+          <h2 className="text-xl font-bold text-klinkara-primary mb-2">Limited Time Offer!</h2>
+          <p className="text-klinkara-text mb-4">Save 20% on all premium sarees this week only.</p>
+          
+          <div className="mb-4 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1610030167685-f39cf8b3e807?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3" 
+              alt="Premium saree collection"
+              className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
             />
           </div>
-
-          {/* Content Section */}
-          <div className="w-full md:w-1/2 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              {banner.title}
-            </h2>
-            <p className="text-gray-600 mb-6">
-              {banner.description}
-            </p>
-            <Link to={banner.link}>
-              <button className="bg-klinkara-primary hover:bg-klinkara-accent text-white font-medium py-2 px-6 rounded-none transition-all duration-300 transform hover:scale-105 border-2 border-klinkara-primary">
-                {banner.buttonText}
-              </button>
-            </Link>
-          </div>
+          
+          <p className="text-sm text-gray-500 mb-4">
+            Use code <span className="font-semibold">PREMIUM20</span> at checkout
+          </p>
+          
+          <a 
+            href="/premium" 
+            className="block w-full bg-klinkara-primary text-white py-2 hover:bg-klinkara-accent transition-colors"
+            onClick={(e) => {
+              e.preventDefault();
+              onClose();
+              window.location.href = '/premium';
+            }}
+          >
+            Shop Premium Collection
+          </a>
         </div>
       </div>
     </div>
