@@ -24,7 +24,7 @@ const PromotionalBanner = ({ onClose }: PromotionalBannerProps) => {
           
           <div className="mb-4 overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1610030167685-f39cf8b3e807?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3" 
+              src=      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3"
               alt="Premium saree collection"
               className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
             />
