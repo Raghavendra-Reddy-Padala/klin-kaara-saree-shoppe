@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Heart, Minus, Plus, ShoppingCart } from 'lucide-react';
@@ -134,26 +133,26 @@ const ProductDetail = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Product Images */}
-        <div>
-          <div className="aspect-square border border-klinkara-secondary mb-4 overflow-hidden">
+        <div className="container-border p-4">
+          <div className="aspect-square border-2 border-klinkara-primary/30 mb-4 overflow-hidden rounded-none">
             <img 
               src={product.imageUrls[currentImageIndex]} 
               alt={product.name} 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
             />
           </div>
           
           {product.imageUrls.length > 1 && (
-            <div className="grid grid-cols-4 gap-2">
+            <div className="grid grid-cols-4 gap-4">
               {product.imageUrls.map((imageUrl: string, index: number) => (
                 <button 
                   key={index}
                   onClick={() => setCurrentImageIndex(index)}
-                  className={`block border ${
+                  className={`block border-2 transition-all duration-300 hover:scale-105 ${
                     index === currentImageIndex 
-                      ? 'border-klinkara-primary' 
-                      : 'border-klinkara-secondary hover:border-gray-400'
-                  } transition-colors`}
+                      ? 'border-klinkara-primary scale-105' 
+                      : 'border-klinkara-primary/30 hover:border-klinkara-primary/50'
+                  }`}
                 >
                   <img 
                     src={imageUrl} 
@@ -167,7 +166,7 @@ const ProductDetail = () => {
         </div>
         
         {/* Product Details */}
-        <div>
+        <div className="container-border p-6">
           <h1 className="text-2xl font-bold text-klinkara-text mb-2">{product.name}</h1>
           
           <p className="text-xl font-semibold text-klinkara-primary mb-4">
@@ -193,7 +192,7 @@ const ProductDetail = () => {
             <div className="flex items-center">
               <button 
                 onClick={decrementQuantity}
-                className="border border-klinkara-secondary px-3 py-2 bg-white hover:bg-klinkara-neutral"
+                className="border-2 border-klinkara-primary/30 px-3 py-2 bg-white hover:bg-klinkara-neutral"
                 aria-label="Decrease quantity"
               >
                 <Minus size={16} />
@@ -205,11 +204,11 @@ const ProductDetail = () => {
                 max="10"
                 value={quantity}
                 onChange={(e) => setQuantity(Math.max(1, Math.min(10, parseInt(e.target.value) || 1)))}
-                className="w-16 border-y border-klinkara-secondary px-3 py-2 text-center [-moz-appearance:_textfield] [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none"
+                className="w-16 border-y-2 border-klinkara-primary/30 px-3 py-2 text-center [-moz-appearance:_textfield] [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none"
               />
               <button 
                 onClick={incrementQuantity}
-                className="border border-klinkara-secondary px-3 py-2 bg-white hover:bg-klinkara-neutral"
+                className="border-2 border-klinkara-primary/30 px-3 py-2 bg-white hover:bg-klinkara-neutral"
                 aria-label="Increase quantity"
               >
                 <Plus size={16} />
@@ -221,7 +220,7 @@ const ProductDetail = () => {
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
             <button
               onClick={handleAddToCart}
-              className="flex-1 bg-klinkara-primary hover:bg-klinkara-accent text-white py-3 px-6 font-medium flex items-center justify-center gap-2 transition-colors"
+              className="flex-1 bg-klinkara-primary hover:bg-klinkara-accent text-white py-3 px-6 font-medium flex items-center justify-center gap-2 transition-colors border-2 border-klinkara-primary"
             >
               <ShoppingCart size={18} />
               Add to Cart
@@ -229,10 +228,10 @@ const ProductDetail = () => {
             
             <button
               onClick={toggleWishlist}
-              className={`border py-3 px-6 font-medium flex items-center justify-center gap-2 transition-colors ${
+              className={`border-2 py-3 px-6 font-medium flex items-center justify-center gap-2 transition-colors ${
                 isInWish 
                   ? 'border-klinkara-primary text-klinkara-primary bg-klinkara-neutral/20' 
-                  : 'border-klinkara-secondary text-klinkara-text hover:border-klinkara-primary hover:text-klinkara-primary'
+                  : 'border-klinkara-primary/30 text-klinkara-text hover:border-klinkara-primary hover:text-klinkara-primary'
               }`}
             >
               <Heart size={18} fill={isInWish ? "#E27D60" : "none"} />
@@ -241,7 +240,7 @@ const ProductDetail = () => {
           </div>
           
           {/* Additional Information */}
-          <div className="border-t border-klinkara-secondary pt-6">
+          <div className="border-t-2 border-klinkara-primary/30 pt-6">
             <div className="mb-4">
               <p className="text-sm text-gray-700">
                 <span className="font-medium">Category:</span>{' '}
