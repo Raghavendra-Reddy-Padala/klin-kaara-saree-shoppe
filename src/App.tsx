@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "@/contexts/CartContext";
 import { WishlistProvider } from "@/contexts/WishlistContext";
+import { AuthProvider } from "@/contexts/AuthContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import BottomNavigation from "./components/BottomNavigation";
@@ -17,38 +18,65 @@ import Wishlist from "./pages/Wishlist";
 import Account from "./pages/Account";
 import Checkout from "./pages/Checkout";
 import NotFound from "./pages/NotFound";
+import Premium from "./pages/Premium";
+import { useEffect, useState } from "react";
+import PromotionalBanner from "./components/PromotionalBanner";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <CartProvider>
-        <WishlistProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <Header />
-            <main className="min-h-[calc(100vh-88px)] pb-16 md:pb-0">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/shop" element={<Shop />} />
-                <Route path="/product/:productId" element={<ProductDetail />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/wishlist" element={<Wishlist />} />
-                <Route path="/account" element={<Account />} />
-                <Route path="/checkout" element={<Checkout />} />
-                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </main>
-            <BottomNavigation />
-            <Footer />
-          </BrowserRouter>
-        </WishlistProvider>
-      </CartProvider>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  const [showBanner, setShowBanner] = useState(false);
+  
+  useEffect(() => {
+    // Show promotional banner after 5 seconds if it hasn't been closed before
+    const bannerClosed = localStorage.getItem('promotionalBannerClosed');
+    if (!bannerClosed) {
+      const timer = setTimeout(() => {
+        setShowBanner(true);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+  
+  const closeBanner = () => {
+    setShowBanner(false);
+    localStorage.setItem('promotionalBannerClosed', 'true');
+  };
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <AuthProvider>
+          <CartProvider>
+            <WishlistProvider>
+              <Toaster />
+              <Sonner />
+              <BrowserRouter>
+                <Header />
+                <main className="min-h-[calc(100vh-88px)] pb-16 md:pb-0 bg-white">
+                  {showBanner && <PromotionalBanner onClose={closeBanner} />}
+                  <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/shop" element={<Shop />} />
+                    <Route path="/product/:productId" element={<ProductDetail />} />
+                    <Route path="/cart" element={<Cart />} />
+                    <Route path="/wishlist" element={<Wishlist />} />
+                    <Route path="/account" element={<Account />} />
+                    <Route path="/premium" element={<Premium />} />
+                    <Route path="/checkout" element={<Checkout />} />
+                    {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </main>
+                <BottomNavigation />
+                <Footer />
+              </BrowserRouter>
+            </WishlistProvider>
+          </CartProvider>
+        </AuthProvider>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

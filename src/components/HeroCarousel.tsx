@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, TouchEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -13,21 +13,21 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    imageUrl: "https://images.unsplash.com/photo-1628070288160-f6c99e9b8857?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl: "https://images.unsplash.com/photo-1602764303096-baef9ac15ed0?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
     title: "Kanchipuram Silk Collection",
     subtitle: "Handcrafted luxury for your special moments",
     buttonText: "Shop Now",
     link: "/shop?category=kanchipuram",
   },
   {
-    imageUrl: "https://images.unsplash.com/photo-1627225924765-552d49cf47ad?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl: "https://images.unsplash.com/photo-1610357526051-16f0fe76ddd4?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
     title: "Wedding Season",
     subtitle: "Premium bridal sarees for your special day",
     buttonText: "View Collection",
-    link: "/shop",
+    link: "/premium",
   },
   {
-    imageUrl: "https://images.unsplash.com/photo-1610030183116-451f9312c552?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl: "https://images.unsplash.com/photo-1595341595379-cf1cd0fb7fb1?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
     title: "Festive Collection",
     subtitle: "Celebrate with elegance & tradition",
     buttonText: "Explore",
@@ -38,6 +38,9 @@ const slides: Slide[] = [
 const HeroCarousel: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+  const minSwipeDistance = 50;
 
   const goToSlide = (index: number) => {
     if (isAnimating) return;
@@ -58,6 +61,37 @@ const HeroCarousel: React.FC = () => {
     goToSlide((currentSlide - 1 + slides.length) % slides.length);
   };
 
+  // Handle touch events for swiping
+  const onTouchStart = (e: TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchMove = (e: TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    
+    const distance = touchStartX.current - touchEndX.current;
+    const isSwipe = Math.abs(distance) > minSwipeDistance;
+    
+    if (isSwipe) {
+      // Swipe left, go to next slide
+      if (distance > 0) {
+        goToNextSlide();
+      }
+      // Swipe right, go to previous slide
+      else {
+        goToPrevSlide();
+      }
+    }
+    
+    // Reset values
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
   // Auto-advance slides
   useEffect(() => {
     const interval = setInterval(() => {
@@ -68,7 +102,12 @@ const HeroCarousel: React.FC = () => {
   }, [currentSlide]);
 
   return (
-    <div className="relative w-full h-[70vh] overflow-hidden">
+    <div 
+      className="relative w-full h-[100vh] md:h-[70vh] overflow-hidden"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
       {/* Slides */}
       {slides.map((slide, index) => (
         <div

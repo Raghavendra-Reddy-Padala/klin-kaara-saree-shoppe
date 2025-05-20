@@ -1,19 +1,16 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, Search, Heart, ShoppingCart, X } from 'lucide-react';
+import { Menu, Search, ShoppingCart, X } from 'lucide-react';
 import { useCart } from '@/contexts/CartContext';
-import { useWishlist } from '@/contexts/WishlistContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
   const { getCartCount } = useCart();
-  const { getWishlistCount } = useWishlist();
   
   const cartCount = getCartCount();
-  const wishlistCount = getWishlistCount();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,7 +37,7 @@ const Header = () => {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 w-full z-50 bg-klinkara-neutral border-b border-klinkara-secondary transition-all duration-300 ${isScrolled ? 'shadow-md' : ''}`}>
+      <header className={`fixed top-0 left-0 w-full z-50 bg-white border-b border-klinkara-secondary transition-all duration-300 ${isScrolled ? 'shadow-md' : ''}`}>
         <div className="flex items-center justify-between px-4 py-3">
           <button 
             onClick={toggleMenu} 
@@ -58,19 +55,7 @@ const Header = () => {
             />
           </Link>
           
-          <div className="flex items-center space-x-3">
-            <Link to="/wishlist" className="relative">
-              <Heart 
-                size={22} 
-                className="text-klinkara-text hover:text-klinkara-primary transition-colors" 
-              />
-              {wishlistCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-klinkara-primary text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
-                  {wishlistCount}
-                </span>
-              )}
-            </Link>
-            
+          <div className="flex items-center">
             <Link to="/cart" className="relative">
               <ShoppingCart 
                 size={22} 
@@ -140,6 +125,15 @@ const Header = () => {
                 onClick={toggleMenu}
               >
                 Shop All
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/premium" 
+                className="block px-4 py-3 text-klinkara-text hover:bg-klinkara-neutral transition-colors"
+                onClick={toggleMenu}
+              >
+                Premium Collection
               </Link>
             </li>
             <li>

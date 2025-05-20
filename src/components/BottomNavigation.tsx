@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, ShoppingBag, Heart, User } from 'lucide-react';
+import { Home, ShoppingBag, Star, Heart, User } from 'lucide-react';
 
 const BottomNavigation = () => {
   const location = useLocation();
@@ -15,7 +15,7 @@ const BottomNavigation = () => {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-20 bg-white border-t border-klinkara-secondary shadow-md md:hidden">
-      <div className="grid grid-cols-4 items-center justify-between">
+      <div className="grid grid-cols-5 items-center justify-between">
         <Link 
           to="/" 
           className={`flex flex-col items-center justify-center py-2 ${
@@ -34,6 +34,16 @@ const BottomNavigation = () => {
         >
           <ShoppingBag size={20} />
           <span className="text-xs mt-1">Shop</span>
+        </Link>
+        
+        <Link 
+          to="/premium" 
+          className={`flex flex-col items-center justify-center py-2 ${
+            isActive('/premium') ? 'text-klinkara-primary' : 'text-klinkara-text'
+          }`}
+        >
+          <Star size={20} />
+          <span className="text-xs mt-1">Premium</span>
         </Link>
         
         <Link 
