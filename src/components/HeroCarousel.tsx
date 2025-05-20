@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef, TouchEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -13,21 +12,21 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    imageUrl: "https://images.unsplash.com/photo-1602764303096-baef9ac15ed0?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
     title: "Kanchipuram Silk Collection",
     subtitle: "Handcrafted luxury for your special moments",
     buttonText: "Shop Now",
     link: "/shop?category=kanchipuram",
   },
   {
-    imageUrl: "https://images.unsplash.com/photo-1610357526051-16f0fe76ddd4?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
     title: "Wedding Season",
     subtitle: "Premium bridal sarees for your special day",
     buttonText: "View Collection",
     link: "/premium",
   },
   {
-    imageUrl: "https://images.unsplash.com/photo-1595341595379-cf1cd0fb7fb1?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
     title: "Festive Collection",
     subtitle: "Celebrate with elegance & tradition",
     buttonText: "Explore",
@@ -103,7 +102,7 @@ const HeroCarousel: React.FC = () => {
 
   return (
     <div 
-      className="relative w-full h-[100vh] md:h-[70vh] overflow-hidden"
+      className="relative w-full h-[100vh] md:h-[70vh] overflow-hidden bg-white"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
@@ -122,7 +121,7 @@ const HeroCarousel: React.FC = () => {
           }}
         >
           {/* Slide Content */}
-          <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center px-4">
+          <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-center items-center text-center px-4">
             <h2 className="text-3xl font-bold text-white mb-2 animate-fade-in">
               {slide.title}
             </h2>
@@ -139,20 +138,24 @@ const HeroCarousel: React.FC = () => {
       ))}
 
       {/* Navigation Arrows */}
-      <button
-        className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 bg-black bg-opacity-30 hover:bg-opacity-50 text-white p-2 rounded-none transition-all"
-        onClick={goToPrevSlide}
-        aria-label="Previous Slide"
-      >
-        <ChevronLeft size={24} />
-      </button>
-      <button
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 bg-black bg-opacity-30 hover:bg-opacity-50 text-white p-2 rounded-none transition-all"
-        onClick={goToNextSlide}
-        aria-label="Next Slide"
-      >
-        <ChevronRight size={24} />
-      </button>
+      {typeof window !== 'undefined' && window.innerWidth >= 768 && (
+        <>
+          <button
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 bg-black bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-none transition-all"
+            onClick={goToPrevSlide}
+            aria-label="Previous Slide"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 bg-black bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-none transition-all"
+            onClick={goToNextSlide}
+            aria-label="Next Slide"
+          >
+            <ChevronRight size={24} />
+          </button>
+        </>
+      )}
 
       {/* Pagination Indicators */}
       <div className="absolute bottom-4 left-0 right-0 flex justify-center z-20">
@@ -160,7 +163,7 @@ const HeroCarousel: React.FC = () => {
           <button
             key={index}
             className={`mx-1 w-2 h-2 bg-white transition-all ${
-              index === currentSlide ? 'w-6 bg-klinkara-primary' : 'bg-opacity-60'
+              index === currentSlide ? 'w-6 bg-klinkara-primary' : 'bg-opacity-40'
             }`}
             onClick={() => goToSlide(index)}
             aria-label={`Go to slide ${index + 1}`}

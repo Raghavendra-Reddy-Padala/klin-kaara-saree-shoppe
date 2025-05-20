@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { UserRound, PackageOpen, MapPin, LogOut } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
@@ -130,7 +129,7 @@ const Account = () => {
           {showRegister ? "Create Account" : "Sign In"}
         </h1>
         
-        <div className="border border-klinkara-secondary bg-white p-6">
+        <div className="account-container">
           {!showRegister ? (
             // Login Form
             <form onSubmit={handleLoginSubmit} className="space-y-4">
@@ -145,7 +144,7 @@ const Account = () => {
                   value={loginForm.email}
                   onChange={handleLoginChange}
                   required
-                  className="w-full border border-klinkara-secondary px-3 py-2 focus:outline-none focus:border-klinkara-primary"
+                  className="account-input"
                 />
               </div>
               
@@ -160,13 +159,13 @@ const Account = () => {
                   value={loginForm.password}
                   onChange={handleLoginChange}
                   required
-                  className="w-full border border-klinkara-secondary px-3 py-2 focus:outline-none focus:border-klinkara-primary"
+                  className="account-input"
                 />
               </div>
               
               <button
                 type="submit"
-                className="w-full bg-klinkara-primary hover:bg-klinkara-accent text-white py-2 font-medium transition-colors"
+                className="account-button"
               >
                 Sign In
               </button>
@@ -191,7 +190,7 @@ const Account = () => {
                   value={registerForm.name}
                   onChange={handleRegisterChange}
                   required
-                  className="w-full border border-klinkara-secondary px-3 py-2 focus:outline-none focus:border-klinkara-primary"
+                  className="account-input"
                 />
               </div>
               
@@ -206,7 +205,7 @@ const Account = () => {
                   value={registerForm.email}
                   onChange={handleRegisterChange}
                   required
-                  className="w-full border border-klinkara-secondary px-3 py-2 focus:outline-none focus:border-klinkara-primary"
+                  className="account-input"
                 />
               </div>
               
@@ -221,7 +220,7 @@ const Account = () => {
                   value={registerForm.password}
                   onChange={handleRegisterChange}
                   required
-                  className="w-full border border-klinkara-secondary px-3 py-2 focus:outline-none focus:border-klinkara-primary"
+                  className="account-input"
                 />
               </div>
               
@@ -236,13 +235,13 @@ const Account = () => {
                   value={registerForm.confirmPassword}
                   onChange={handleRegisterChange}
                   required
-                  className="w-full border border-klinkara-secondary px-3 py-2 focus:outline-none focus:border-klinkara-primary"
+                  className="account-input"
                 />
               </div>
               
               <button
                 type="submit"
-                className="w-full bg-klinkara-primary hover:bg-klinkara-accent text-white py-2 font-medium transition-colors"
+                className="account-button"
               >
                 Create Account
               </button>
