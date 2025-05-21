@@ -14,56 +14,56 @@ const BottomNavigation = () => {
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-20 bg-white border-t border-gray-200 shadow-md md:hidden">
+    <div className="fixed bottom-0 left-0 right-0 z-20 bg-white border-t border-klinkara-secondary shadow-md md:hidden">
       <div className="grid grid-cols-5 items-center justify-between">
         <Link 
           to="/" 
-          className={`flex flex-col items-center justify-center py-3 ${
-            isActive('/') ? 'text-klinkara-primary scale-110' : 'text-klinkara-text'
-          } transition-all duration-200`}
+          className={`flex flex-col items-center justify-center py-2 ${
+            isActive('/') ? 'text-klinkara-primary' : 'text-klinkara-text'
+          }`}
         >
-          <Home size={22} className={isActive('/') ? 'animate-fade-in' : ''} />
-          <span className="text-xs mt-1 font-medium">Home</span>
+          <Home size={20} />
+          <span className="text-xs mt-1">Home</span>
         </Link>
         
         <Link 
           to="/shop" 
-          className={`flex flex-col items-center justify-center py-3 ${
-            isActive('/shop') ? 'text-klinkara-primary scale-110' : 'text-klinkara-text'
-          } transition-all duration-200`}
+          className={`flex flex-col items-center justify-center py-2 ${
+            isActive('/shop') ? 'text-klinkara-primary' : 'text-klinkara-text'
+          }`}
         >
-          <ShoppingBag size={22} className={isActive('/shop') ? 'animate-fade-in' : ''} />
-          <span className="text-xs mt-1 font-medium">Shop</span>
+          <ShoppingBag size={20} />
+          <span className="text-xs mt-1">Shop</span>
         </Link>
         
         <Link 
           to="/premium" 
-          className={`flex flex-col items-center justify-center py-3 ${
-            isActive('/premium') ? 'text-klinkara-primary scale-110' : 'text-klinkara-text'
-          } transition-all duration-200`}
+          className={`flex flex-col items-center justify-center py-2 ${
+            isActive('/premium') ? 'text-klinkara-primary' : 'text-klinkara-text'
+          }`}
         >
-          <Star size={22} className={isActive('/premium') ? 'animate-fade-in' : ''} />
-          <span className="text-xs mt-1 font-medium">Premium</span>
+          <Star size={20} />
+          <span className="text-xs mt-1">Premium</span>
         </Link>
         
         <Link 
           to="/wishlist" 
-          className={`flex flex-col items-center justify-center py-3 ${
-            isActive('/wishlist') ? 'text-klinkara-primary scale-110' : 'text-klinkara-text'
-          } transition-all duration-200`}
+          className={`flex flex-col items-center justify-center py-2 ${
+            isActive('/wishlist') ? 'text-klinkara-primary' : 'text-klinkara-text'
+          }`}
         >
-          <Heart size={22} className={isActive('/wishlist') ? 'animate-fade-in' : ''} />
-          <span className="text-xs mt-1 font-medium">Wishlist</span>
+          <Heart size={20} />
+          <span className="text-xs mt-1">Wishlist</span>
         </Link>
         
         <Link 
           to="/account" 
-          className={`flex flex-col items-center justify-center py-3 ${
-            isActive('/account') ? 'text-klinkara-primary scale-110' : 'text-klinkara-text'
-          } transition-all duration-200`}
+          className={`flex flex-col items-center justify-center py-2 ${
+            isActive('/account') ? 'text-klinkara-primary' : 'text-klinkara-text'
+          }`}
         >
-          <User size={22} className={isActive('/account') ? 'animate-fade-in' : ''} />
-          <span className="text-xs mt-1 font-medium">Account</span>
+          <User size={20} />
+          <span className="text-xs mt-1">Account</span>
         </Link>
       </div>
     </div>

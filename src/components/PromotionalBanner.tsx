@@ -9,22 +9,22 @@ interface PromotionalBannerProps {
 const PromotionalBanner = ({ onClose }: PromotionalBannerProps) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 backdrop-blur-sm animate-fade-in">
-      <div className="bg-white border border-gray-200 rounded-lg w-full max-w-md p-6 relative animate-scale-in shadow-lg">
+      <div className="bg-white border border-klinkara-secondary w-full max-w-md p-6 relative animate-scale-in">
         <button 
           onClick={onClose}
-          className="absolute top-3 right-3 text-gray-500 hover:text-klinkara-primary transition-colors"
+          className="absolute top-3 right-3 text-klinkara-text hover:text-klinkara-primary transition-colors"
           aria-label="Close promotional banner"
         >
-          <X size={24} className="hover:rotate-90 transition-transform duration-300" />
+          <X size={24} />
         </button>
         
         <div className="text-center">
           <h2 className="text-xl font-bold text-klinkara-primary mb-2">Limited Time Offer!</h2>
           <p className="text-klinkara-text mb-4">Save 20% on all premium sarees this week only.</p>
           
-          <div className="mb-4 overflow-hidden rounded-md">
+          <div className="mb-4 overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3"
+              src=      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3"
               alt="Premium saree collection"
               className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
             />
@@ -36,7 +36,7 @@ const PromotionalBanner = ({ onClose }: PromotionalBannerProps) => {
           
           <a 
             href="/premium" 
-            className="block w-full bg-klinkara-primary text-white py-2 px-4 rounded-md hover:bg-klinkara-accent transition-colors shadow-sm hover:shadow-md"
+            className="block w-full bg-klinkara-primary text-white py-2 hover:bg-klinkara-accent transition-colors"
             onClick={(e) => {
               e.preventDefault();
               onClose();

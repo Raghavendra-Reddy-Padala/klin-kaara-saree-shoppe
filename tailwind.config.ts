@@ -63,12 +63,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Updated brand colors to match the logo's pink and blue theme
+				// Brand colors
 				klinkara: {
-					primary: '#D946EF', // Dark Pink/Magenta
-					secondary: '#E8A87C', // Keeping this gold tone as accent
-					neutral: '#FFFFFF', // Pure White
-					accent: '#1EAEDB', // Bright Blue
+					primary: '#E27D60', // Terracotta Sunset
+					secondary: '#E8A87C', // Saffron Gold
+					neutral: '#F9F7F7', // Ivory Silk
+					accent: '#41B3A3', // Deep Peacock
 					text: '#1D3557', // Rich Indigo
 				}
 			},
@@ -103,12 +103,12 @@ export default {
 					'100%': { transform: 'translateX(100%)' }
 				},
 				'fade-in': {
-					'0%': { opacity: '0', transform: 'translateY(10px)' },
-					'100%': { opacity: '1', transform: 'translateY(0)' }
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
 				},
 				'fade-out': {
-					'0%': { opacity: '1', transform: 'translateY(0)' },
-					'100%': { opacity: '0', transform: 'translateY(10px)' }
+					'0%': { opacity: '1' },
+					'100%': { opacity: '0' }
 				},
 				'scale-in': {
 					'0%': { transform: 'scale(0.95)', opacity: '0' },
@@ -128,9 +128,9 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'slide-in': 'slide-in 0.3s ease-out',
 				'slide-out': 'slide-out 0.3s ease-out',
-				'fade-in': 'fade-in 0.5s ease-out',
+				'fade-in': 'fade-in 0.3s ease-out',
 				'fade-out': 'fade-out 0.3s ease-out',
-				'scale-in': 'scale-in 0.4s ease-out',
+				'scale-in': 'scale-in 0.2s ease-out',
 				pulse: 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
 				shimmer: 'shimmer 2s infinite linear'
 			}
