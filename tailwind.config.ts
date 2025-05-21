@@ -63,12 +63,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Updated brand colors to match the logo's pink and blue theme
+				// Reverted brand colors
 				klinkara: {
-					primary: '#D946EF', // Dark Pink/Magenta
-					secondary: '#E8A87C', // Keeping this gold tone as accent
+					primary: '#26B6BD', // Teal
+					secondary: '#E8A87C', // Gold
 					neutral: '#FFFFFF', // Pure White
-					accent: '#1EAEDB', // Bright Blue
+					accent: '#E8A87C', // Gold
 					text: '#1D3557', // Rich Indigo
 				}
 			},
