@@ -28,19 +28,16 @@ const App = () => {
   const [showBanner, setShowBanner] = useState(false);
   
   useEffect(() => {
-    // Show promotional banner after 5 seconds if it hasn't been closed before
-    const bannerClosed = localStorage.getItem('promotionalBannerClosed');
-    if (!bannerClosed) {
-      const timer = setTimeout(() => {
-        setShowBanner(true);
-      }, 5000);
-      return () => clearTimeout(timer);
-    }
+    // Show promotional banner after a short delay on every refresh
+    const timer = setTimeout(() => {
+      setShowBanner(true);
+    }, 2000);
+    
+    return () => clearTimeout(timer);
   }, []);
   
   const closeBanner = () => {
     setShowBanner(false);
-    localStorage.setItem('promotionalBannerClosed', 'true');
   };
 
   return (
