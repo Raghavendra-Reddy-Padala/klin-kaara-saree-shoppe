@@ -13,21 +13,24 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    imageUrl: "https://images.unsplash.com/photo-1602764303096-baef9ac15ed0?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl:       "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+
     title: "Kanchipuram Silk Collection",
     subtitle: "Handcrafted luxury for your special moments",
     buttonText: "Shop Now",
     link: "/shop?category=kanchipuram",
   },
   {
-    imageUrl: "https://images.unsplash.com/photo-1610357526051-16f0fe76ddd4?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl:       "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+
     title: "Wedding Season",
     subtitle: "Premium bridal sarees for your special day",
     buttonText: "View Collection",
     link: "/premium",
   },
   {
-    imageUrl: "https://images.unsplash.com/photo-1595341595379-cf1cd0fb7fb1?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl:       "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+
     title: "Festive Collection",
     subtitle: "Celebrate with elegance & tradition",
     buttonText: "Explore",
