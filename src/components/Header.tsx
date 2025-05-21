@@ -37,11 +37,7 @@ const Header = () => {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-sm shadow-md border-b border-klinkara-secondary/20' 
-          : 'bg-transparent'
-      }`}>
+      <header className={`fixed top-0 left-0 w-full z-50 bg-white border-b border-klinkara-secondary transition-all duration-300 ${isScrolled ? 'shadow-md' : ''}`}>
         <div className="flex items-center justify-between px-4 py-3">
           <button 
             onClick={toggleMenu} 
@@ -66,7 +62,7 @@ const Header = () => {
                 className="text-klinkara-text hover:text-klinkara-primary transition-colors" 
               />
               {cartCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-klinkara-primary text-white text-xs rounded-full w-4 h-4 flex items-center justify-center animate-scale-in">
+                <span className="absolute -top-2 -right-2 bg-klinkara-primary text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
                   {cartCount}
                 </span>
               )}
@@ -74,14 +70,14 @@ const Header = () => {
           </div>
         </div>
         
-        <div className={`px-4 py-2 ${isScrolled ? 'opacity-100' : 'opacity-90'}`}>
+        <div className="px-4 py-2">
           <form onSubmit={handleSearch} className="relative">
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search for sarees..."
-              className="w-full py-2 px-4 pr-10 bg-white/90 backdrop-blur-sm border border-klinkara-secondary/30 rounded-md text-sm focus:outline-none focus:border-klinkara-primary transition-all"
+              className="w-full py-2 px-4 pr-10 bg-white border border-klinkara-secondary rounded-none text-sm focus:outline-none focus:border-klinkara-primary"
             />
             <button 
               type="submit" 
@@ -100,7 +96,7 @@ const Header = () => {
           isMenuOpen ? 'translate-x-0' : '-translate-x-full'
         } shadow-lg`}
       >
-        <div className="flex items-center justify-between p-4 border-b border-klinkara-secondary/30">
+        <div className="flex items-center justify-between p-4 border-b border-klinkara-secondary">
           <h2 className="text-lg font-medium text-klinkara-text">Menu</h2>
           <button 
             onClick={toggleMenu} 
