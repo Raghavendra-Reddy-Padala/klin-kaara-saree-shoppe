@@ -40,23 +40,23 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       <div className="product-card overflow-hidden group h-full flex flex-col">
         <div className="relative h-0 pb-[125%] overflow-hidden bg-gray-50">
           <img 
-            src={product.imageUrls[0]} 
+            src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3"
             alt={product.name} 
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
           <button 
             onClick={toggleWishlist}
-            className="absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white bg-opacity-80 rounded-none z-10 transition-transform duration-300 hover:scale-110"
+            className="absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white bg-opacity-80 rounded-full z-10 transition-transform duration-300 hover:scale-110"
             aria-label={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
           >
             <Heart 
               size={18} 
-              fill={isWishlisted ? "#E27D60" : "none"} 
-              stroke={isWishlisted ? "#E27D60" : "currentColor"}
+              fill={isWishlisted ? "#D946EF" : "none"} 
+              stroke={isWishlisted ? "#D946EF" : "currentColor"}
             />
           </button>
         </div>
-        <div className="p-3 flex-grow flex flex-col">
+        <div className="p-4 flex-grow flex flex-col">
           <h3 className="text-sm font-medium text-klinkara-text mb-1 line-clamp-1">
             {product.name}
           </h3>

@@ -51,11 +51,11 @@ const Home = () => {
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="section-title text-center mb-8">Follow Us on Instagram</h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
             {Array(4).fill(0).map((_, index) => (
-              <a href="#" key={index} className="relative group block h-40">
+              <a href="#" key={index} className="relative group block h-48 rounded-lg overflow-hidden">
                 <img 
-                  src={`https://images.unsplash.com/photo-1610030${index + 1}67685-f39cf8b3e807?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3`} 
+                  src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3"
                   alt="Instagram post" 
                   className="w-full h-full object-cover"
                 />
@@ -68,7 +68,7 @@ const Home = () => {
             ))}
           </div>
           
-          <a href="#" className="inline-block mt-8 border border-klinkara-primary text-klinkara-primary px-6 py-2 hover:bg-klinkara-primary hover:text-white transition-colors duration-300">
+          <a href="#" className="inline-block mt-8 border border-klinkara-primary text-klinkara-primary px-6 py-2 rounded-md hover:bg-klinkara-primary hover:text-white transition-colors duration-300">
             Follow Us
           </a>
         </div>

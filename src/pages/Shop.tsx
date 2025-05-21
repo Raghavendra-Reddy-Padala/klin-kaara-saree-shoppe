@@ -56,10 +56,10 @@ const Shop = () => {
       <div className="mb-8 overflow-x-auto">
         <div className="flex space-x-2 pb-2">
           <button
-            className={`whitespace-nowrap px-4 py-2 text-sm border ${
+            className={`whitespace-nowrap px-4 py-2 text-sm border rounded-md ${
               !selectedCategory
                 ? 'border-klinkara-primary bg-klinkara-primary text-white'
-                : 'border-klinkara-secondary bg-white text-klinkara-text hover:bg-klinkara-neutral'
+                : 'border-gray-200 bg-white text-klinkara-text hover:bg-gray-50'
             } transition-colors`}
             onClick={() => handleCategoryChange(null)}
           >
@@ -69,10 +69,10 @@ const Shop = () => {
           {categories.map((category) => (
             <button
               key={category.id}
-              className={`whitespace-nowrap px-4 py-2 text-sm border ${
+              className={`whitespace-nowrap px-4 py-2 text-sm border rounded-md ${
                 selectedCategory === category.id
                   ? 'border-klinkara-primary bg-klinkara-primary text-white'
-                  : 'border-klinkara-secondary bg-white text-klinkara-text hover:bg-klinkara-neutral'
+                  : 'border-gray-200 bg-white text-klinkara-text hover:bg-gray-50'
               } transition-colors`}
               onClick={() => handleCategoryChange(category.id)}
             >

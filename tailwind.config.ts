@@ -63,13 +63,13 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Brand colors
+				// Brand colors - updated to dark pink and blue
 				klinkara: {
-					primary: '#E27D60', // Terracotta Sunset
-					secondary: '#E8A87C', // Saffron Gold
-					neutral: '#F9F7F7', // Ivory Silk
-					accent: '#41B3A3', // Deep Peacock
-					text: '#1D3557', // Rich Indigo
+					primary: '#D946EF', // Dark Pink/Magenta (was Terracotta Sunset)
+					secondary: '#1EAEDB', // Blue (was Saffron Gold)
+					neutral: '#FFFFFF', // Pure White (was Ivory Silk)
+					accent: '#1EAEDB', // Blue (was Deep Peacock)
+					text: '#1D3557', // Rich Indigo (kept the same for contrast)
 				}
 			},
 			borderRadius: {
