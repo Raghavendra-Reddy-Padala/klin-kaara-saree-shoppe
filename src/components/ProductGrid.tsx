@@ -22,7 +22,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, loading = false }) 
 
   if (products.length === 0) {
     return (
-      <div className="text-center py-16 bg-white border border-gray-200 p-8 shadow-sm rounded-lg">
+      <div className="text-center py-16 bg-white border border-klinkara-secondary p-8 shadow-sm">
         <p className="text-lg text-gray-500">No products found</p>
         <p className="text-sm text-gray-400 mt-2">Try adjusting your filters or browse our categories</p>
       </div>

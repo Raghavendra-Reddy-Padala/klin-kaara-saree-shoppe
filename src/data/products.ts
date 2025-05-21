@@ -21,43 +21,37 @@ export const categories: Category[] = [
     id: "kanchipuram",
     name: "Kanchipuram Silk",
     description: "Luxurious silk sarees from Kanchipuram with intricate zari work",
-    imageUrl:       "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-
+    imageUrl: "https://images.unsplash.com/photo-1628070288160-f6c99e9b8857?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
   },
   {
     id: "banarasi",
     name: "Banarasi Silk",
     description: "Opulent silk sarees with ornate designs from Varanasi",
-    imageUrl:       "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-
+    imageUrl: "https://images.unsplash.com/photo-1610030181087-540121d17985?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
   },
   {
     id: "patola",
     name: "Patola",
     description: "Double ikat woven sarees from Gujarat with geometric patterns",
-    imageUrl:       "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-
+    imageUrl: "https://images.unsplash.com/photo-1603653760926-2b21b059b385?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3",
   },
   {
     id: "chanderi",
     name: "Chanderi",
     description: "Lightweight sarees with shimmering texture from Madhya Pradesh",
-    imageUrl:      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-
+    imageUrl: "https://images.unsplash.com/photo-1610030183116-451f9312c552?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
   },
   {
     id: "sambalpuri",
     name: "Sambalpuri",
     description: "Traditional tie and dye sarees from Odisha",
-    imageUrl:       "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-
+    imageUrl: "https://images.unsplash.com/photo-1627225924765-552d49cf47ad?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
   },
   {
     id: "pochampally",
     name: "Pochampally Ikat",
     description: "Geometric patterned ikat sarees from Telangana",
-    imageUrl:       "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-
+    imageUrl: "https://images.unsplash.com/photo-1606102717846-a419680dc8d7?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
   }
 ];
 
@@ -77,8 +71,8 @@ export const products: Product[] = [
       "Handwoven by master artisans"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1610030244992-ed81fc0b0e2e?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1610030259268-57aa05ec8423?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3"
     ]
   },
   {
@@ -95,8 +89,8 @@ export const products: Product[] = [
       "Handwoven by master artisans"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1610030260729-8c2c6d7538ec?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1610030176845-49020fba1fc7?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3"
     ]
   },
   {
@@ -113,8 +107,8 @@ export const products: Product[] = [
       "Handwoven by master artisans"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1603653288540-2f89849f2e96?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1606102716434-4301d9038da5?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3"
     ]
   },
   {
@@ -131,8 +125,8 @@ export const products: Product[] = [
       "Handwoven by master artisans"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1606102717724-7d9f0ca3efea?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1614700580770-1f343af7fe93?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3"
     ]
   },
   {
@@ -149,8 +143,8 @@ export const products: Product[] = [
       "Handwoven by master artisans"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1605457222668-5e3682c63c3b?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1603144890228-ab827507df60?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3"
     ]
   },
   
@@ -187,8 +181,8 @@ export const products: Product[] = [
       "Handwoven in Varanasi"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1610030181087-540121d17985?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1610030181087-540121d17985?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3"
     ]
   },
   {
@@ -205,8 +199,8 @@ export const products: Product[] = [
       "Handwoven in Varanasi"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1605457221917-78ab39b284fb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1605457221917-78ab39b284fb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3"
     ]
   },
   {
@@ -223,8 +217,8 @@ export const products: Product[] = [
       "Handwoven in Varanasi"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1606102716649-d752cf38e1e1?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1606102716649-d752cf38e1e1?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3"
     ]
   },
   {
@@ -241,8 +235,8 @@ export const products: Product[] = [
       "Handwoven in Varanasi"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1627225924765-552d49cf47ad?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1627225924765-552d49cf47ad?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3"
     ]
   },
   
@@ -261,8 +255,8 @@ export const products: Product[] = [
       "Handwoven in Gujarat"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1610030167685-f39cf8b3e807?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1610030167685-f39cf8b3e807?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3"
     ]
   },
   {
@@ -279,8 +273,8 @@ export const products: Product[] = [
       "Handwoven in Madhya Pradesh"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1610030183116-451f9312c552?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1610030183116-451f9312c552?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3"
     ]
   },
   {
@@ -297,8 +291,8 @@ export const products: Product[] = [
       "Handwoven in Odisha"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1614607206234-f7d29a7e80f4?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1614607206234-f7d29a7e80f4?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3"
     ]
   },
   {
@@ -313,11 +307,10 @@ export const products: Product[] = [
       "Contrasting border and pallu",
       "Matching blouse piece included",
       "Handwoven in Telangana"
-      
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1606102717846-a419680dc8d7?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1606102717846-a419680dc8d7?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3"
     ]
   }
 ];

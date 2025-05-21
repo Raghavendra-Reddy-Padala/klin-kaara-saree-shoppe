@@ -2,7 +2,6 @@
 import React, { useState, useEffect, useRef, TouchEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useIsMobile } from '@/hooks/use-mobile';
 
 interface Slide {
   imageUrl: string;
@@ -14,21 +13,21 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    imageUrl: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl: "https://images.unsplash.com/photo-1602764303096-baef9ac15ed0?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
     title: "Kanchipuram Silk Collection",
     subtitle: "Handcrafted luxury for your special moments",
     buttonText: "Shop Now",
     link: "/shop?category=kanchipuram",
   },
   {
-    imageUrl: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl: "https://images.unsplash.com/photo-1610357526051-16f0fe76ddd4?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
     title: "Wedding Season",
     subtitle: "Premium bridal sarees for your special day",
     buttonText: "View Collection",
     link: "/premium",
   },
   {
-    imageUrl: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl: "https://images.unsplash.com/photo-1595341595379-cf1cd0fb7fb1?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
     title: "Festive Collection",
     subtitle: "Celebrate with elegance & tradition",
     buttonText: "Explore",
@@ -42,7 +41,6 @@ const HeroCarousel: React.FC = () => {
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
   const minSwipeDistance = 50;
-  const isMobile = useIsMobile();
 
   const goToSlide = (index: number) => {
     if (isAnimating) return;
@@ -105,7 +103,7 @@ const HeroCarousel: React.FC = () => {
 
   return (
     <div 
-      className={`relative w-full ${isMobile ? 'h-[60vh]' : 'h-[70vh]'} overflow-hidden`}
+      className="relative w-full h-[100vh] md:h-[70vh] overflow-hidden"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
@@ -132,7 +130,7 @@ const HeroCarousel: React.FC = () => {
               {slide.subtitle}
             </p>
             <Link to={slide.link}>
-              <button className="bg-klinkara-primary hover:bg-klinkara-primary/80 text-white font-medium py-2 px-6 rounded-md transition-all duration-300 transform hover:scale-105 animate-scale-in">
+              <button className="bg-klinkara-primary hover:bg-klinkara-accent text-white font-medium py-2 px-6 rounded-none transition-all duration-300 transform hover:scale-105 animate-scale-in">
                 {slide.buttonText}
               </button>
             </Link>
@@ -140,33 +138,29 @@ const HeroCarousel: React.FC = () => {
         </div>
       ))}
 
-      {/* Navigation Arrows - Only show on desktop */}
-      {!isMobile && (
-        <>
-          <button
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 bg-black bg-opacity-30 hover:bg-opacity-50 text-white p-2 rounded-full transition-all"
-            onClick={goToPrevSlide}
-            aria-label="Previous Slide"
-          >
-            <ChevronLeft size={24} />
-          </button>
-          <button
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 bg-black bg-opacity-30 hover:bg-opacity-50 text-white p-2 rounded-full transition-all"
-            onClick={goToNextSlide}
-            aria-label="Next Slide"
-          >
-            <ChevronRight size={24} />
-          </button>
-        </>
-      )}
+      {/* Navigation Arrows */}
+      <button
+        className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 bg-black bg-opacity-30 hover:bg-opacity-50 text-white p-2 rounded-none transition-all"
+        onClick={goToPrevSlide}
+        aria-label="Previous Slide"
+      >
+        <ChevronLeft size={24} />
+      </button>
+      <button
+        className="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 bg-black bg-opacity-30 hover:bg-opacity-50 text-white p-2 rounded-none transition-all"
+        onClick={goToNextSlide}
+        aria-label="Next Slide"
+      >
+        <ChevronRight size={24} />
+      </button>
 
       {/* Pagination Indicators */}
       <div className="absolute bottom-4 left-0 right-0 flex justify-center z-20">
         {slides.map((_, index) => (
           <button
             key={index}
-            className={`mx-1 h-2 rounded-full transition-all ${
-              index === currentSlide ? 'w-6 bg-klinkara-primary' : 'w-2 bg-white bg-opacity-60'
+            className={`mx-1 w-2 h-2 bg-white transition-all ${
+              index === currentSlide ? 'w-6 bg-klinkara-primary' : 'bg-opacity-60'
             }`}
             onClick={() => goToSlide(index)}
             aria-label={`Go to slide ${index + 1}`}

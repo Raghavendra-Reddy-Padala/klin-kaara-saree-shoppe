@@ -5,7 +5,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%; /* Pure White */
+    --background: 0 0% 98%; /* Ivory Silk */
     --foreground: 217 33% 23%; /* Rich Indigo */
 
     --card: 0 0% 100%;
@@ -14,28 +14,28 @@
     --popover: 0 0% 100%;
     --popover-foreground: 217 33% 23%;
 
-    --primary: 286 88% 61%; /* Dark Pink/Magenta */
+    --primary: 10 65% 63%; /* Terracotta Sunset */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 197 83% 49%; /* Blue */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 25 64% 70%; /* Saffron Gold */
+    --secondary-foreground: 217 33% 23%;
 
     --muted: 0 0% 96%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 197 83% 49%; /* Blue */
+    --accent: 168 45% 48%; /* Deep Peacock */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 286 88% 61%;
+    --border: 25 64% 85%;
+    --input: 25 64% 85%;
+    --ring: 25 64% 70%;
 
-    --radius: 0.5rem; /* Slightly curved edges */
+    --radius: 0.125rem; /* Sharper edges for container */
 
-    --sidebar-background: 0 0% 100%;
+    --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
@@ -58,15 +58,15 @@
 
 @layer components {
   .product-card {
-    @apply border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all duration-300;
+    @apply border border-klinkara-secondary rounded-none shadow-sm hover:shadow-md transition-all duration-300;
   }
   
   .category-card {
-    @apply border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all duration-300;
+    @apply border border-klinkara-secondary rounded-none shadow-sm hover:shadow-md transition-all duration-300;
   }
 
   .section-title {
-    @apply text-xl font-semibold text-klinkara-text pb-2 border-b border-gray-200;
+    @apply text-xl font-semibold text-klinkara-text pb-2 border-b border-klinkara-secondary;
   }
 
   .skeletal-loader {
