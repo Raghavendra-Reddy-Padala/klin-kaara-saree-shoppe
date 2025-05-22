@@ -41,7 +41,7 @@ const Header = () => {
         <div className="flex items-center justify-between px-4 py-3">
           <button 
             onClick={toggleMenu} 
-            className="text-klinkara-text hover:text-klinkara-primary transition-colors"
+            className="text-klinkara-text hover:text-klinkara-primary transition-colors duration-300"
             aria-label="Open Menu"
           >
             <Menu size={24} />
@@ -59,7 +59,7 @@ const Header = () => {
             <Link to="/cart" className="relative">
               <ShoppingCart 
                 size={22} 
-                className="text-klinkara-text hover:text-klinkara-primary transition-colors" 
+                className="text-klinkara-text hover:text-klinkara-primary transition-colors duration-300" 
               />
               {cartCount > 0 && (
                 <span className="absolute -top-2 -right-2 bg-klinkara-primary text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
@@ -77,11 +77,11 @@ const Header = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search for sarees..."
-              className="w-full py-2 px-4 pr-10 bg-white border border-klinkara-secondary rounded-none text-sm focus:outline-none focus:border-klinkara-primary"
+              className="w-full py-2 px-4 pr-10 bg-white border border-klinkara-secondary rounded-none text-sm focus:outline-none focus:border-klinkara-primary transition-all duration-300"
             />
             <button 
               type="submit" 
-              className="absolute right-0 top-0 h-full px-3 text-klinkara-text"
+              className="absolute right-0 top-0 h-full px-3 text-klinkara-text hover:text-klinkara-primary transition-colors duration-300"
               aria-label="Search"
             >
               <Search size={18} />
@@ -100,10 +100,10 @@ const Header = () => {
           <h2 className="text-lg font-medium text-klinkara-text">Menu</h2>
           <button 
             onClick={toggleMenu} 
-            className="text-klinkara-text hover:text-klinkara-primary"
+            className="text-klinkara-text hover:text-klinkara-primary transition-colors duration-300"
             aria-label="Close Menu"
           >
-            <X size={24} />
+            <X size={24} className="hover:rotate-90 transition-transform duration-300" />
           </button>
         </div>
         
@@ -112,7 +112,7 @@ const Header = () => {
             <li>
               <Link 
                 to="/" 
-                className="block px-4 py-3 text-klinkara-text hover:bg-klinkara-neutral transition-colors"
+                className="block px-4 py-3 text-klinkara-text hover:bg-gray-50 hover:text-klinkara-primary transition-all duration-300"
                 onClick={toggleMenu}
               >
                 Home
@@ -121,7 +121,7 @@ const Header = () => {
             <li>
               <Link 
                 to="/shop" 
-                className="block px-4 py-3 text-klinkara-text hover:bg-klinkara-neutral transition-colors"
+                className="block px-4 py-3 text-klinkara-text hover:bg-gray-50 hover:text-klinkara-primary transition-all duration-300"
                 onClick={toggleMenu}
               >
                 Shop All
@@ -130,7 +130,7 @@ const Header = () => {
             <li>
               <Link 
                 to="/premium" 
-                className="block px-4 py-3 text-klinkara-text hover:bg-klinkara-neutral transition-colors"
+                className="block px-4 py-3 text-klinkara-text hover:bg-gray-50 hover:text-klinkara-primary transition-all duration-300"
                 onClick={toggleMenu}
               >
                 Premium Collection
@@ -139,7 +139,7 @@ const Header = () => {
             <li>
               <Link 
                 to="/cart" 
-                className="block px-4 py-3 text-klinkara-text hover:bg-klinkara-neutral transition-colors"
+                className="block px-4 py-3 text-klinkara-text hover:bg-gray-50 hover:text-klinkara-primary transition-all duration-300"
                 onClick={toggleMenu}
               >
                 Cart
@@ -148,7 +148,7 @@ const Header = () => {
             <li>
               <Link 
                 to="/wishlist" 
-                className="block px-4 py-3 text-klinkara-text hover:bg-klinkara-neutral transition-colors"
+                className="block px-4 py-3 text-klinkara-text hover:bg-gray-50 hover:text-klinkara-primary transition-all duration-300"
                 onClick={toggleMenu}
               >
                 Wishlist
@@ -157,7 +157,7 @@ const Header = () => {
             <li>
               <Link 
                 to="/account" 
-                className="block px-4 py-3 text-klinkara-text hover:bg-klinkara-neutral transition-colors"
+                className="block px-4 py-3 text-klinkara-text hover:bg-gray-50 hover:text-klinkara-primary transition-all duration-300"
                 onClick={toggleMenu}
               >
                 Account
@@ -166,7 +166,7 @@ const Header = () => {
             <li>
               <Link 
                 to="/contact" 
-                className="block px-4 py-3 text-klinkara-text hover:bg-klinkara-neutral transition-colors"
+                className="block px-4 py-3 text-klinkara-text hover:bg-gray-50 hover:text-klinkara-primary transition-all duration-300"
                 onClick={toggleMenu}
               >
                 Contact Us
@@ -175,7 +175,7 @@ const Header = () => {
             <li>
               <Link 
                 to="/privacy-policy" 
-                className="block px-4 py-3 text-klinkara-text hover:bg-klinkara-neutral transition-colors"
+                className="block px-4 py-3 text-klinkara-text hover:bg-gray-50 hover:text-klinkara-primary transition-all duration-300"
                 onClick={toggleMenu}
               >
                 Privacy Policy

@@ -14,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 217 33% 23%;
 
-    --primary: 293 86% 58%; /* Dark Pink/Magenta */
+    --primary: 338 56% 49%; /* Updated to Pink #C6386E */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 25 64% 70%; /* Saffron Gold */
@@ -23,7 +23,7 @@
     --muted: 0 0% 96%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 196 76% 49%; /* Bright Blue */
+    --accent: 211 72% 36%; /* Updated to Blue #1C529A */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;

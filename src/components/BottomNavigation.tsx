@@ -19,8 +19,8 @@ const BottomNavigation = () => {
         <Link 
           to="/" 
           className={`flex flex-col items-center justify-center py-3 ${
-            isActive('/') ? 'text-klinkara-primary scale-110' : 'text-klinkara-text'
-          } transition-all duration-200`}
+            isActive('/') ? 'text-klinkara-primary scale-110' : 'text-klinkara-text hover:text-klinkara-accent'
+          } transition-all duration-300`}
         >
           <Home size={22} className={isActive('/') ? 'animate-fade-in' : ''} />
           <span className="text-xs mt-1 font-medium">Home</span>
@@ -29,8 +29,8 @@ const BottomNavigation = () => {
         <Link 
           to="/shop" 
           className={`flex flex-col items-center justify-center py-3 ${
-            isActive('/shop') ? 'text-klinkara-primary scale-110' : 'text-klinkara-text'
-          } transition-all duration-200`}
+            isActive('/shop') ? 'text-klinkara-primary scale-110' : 'text-klinkara-text hover:text-klinkara-accent'
+          } transition-all duration-300`}
         >
           <ShoppingBag size={22} className={isActive('/shop') ? 'animate-fade-in' : ''} />
           <span className="text-xs mt-1 font-medium">Shop</span>
@@ -39,8 +39,8 @@ const BottomNavigation = () => {
         <Link 
           to="/premium" 
           className={`flex flex-col items-center justify-center py-3 ${
-            isActive('/premium') ? 'text-klinkara-primary scale-110' : 'text-klinkara-text'
-          } transition-all duration-200`}
+            isActive('/premium') ? 'text-klinkara-primary scale-110' : 'text-klinkara-text hover:text-klinkara-accent'
+          } transition-all duration-300`}
         >
           <Star size={22} className={isActive('/premium') ? 'animate-fade-in' : ''} />
           <span className="text-xs mt-1 font-medium">Premium</span>
@@ -49,8 +49,8 @@ const BottomNavigation = () => {
         <Link 
           to="/wishlist" 
           className={`flex flex-col items-center justify-center py-3 ${
-            isActive('/wishlist') ? 'text-klinkara-primary scale-110' : 'text-klinkara-text'
-          } transition-all duration-200`}
+            isActive('/wishlist') ? 'text-klinkara-primary scale-110' : 'text-klinkara-text hover:text-klinkara-accent'
+          } transition-all duration-300`}
         >
           <Heart size={22} className={isActive('/wishlist') ? 'animate-fade-in' : ''} />
           <span className="text-xs mt-1 font-medium">Wishlist</span>
@@ -59,8 +59,8 @@ const BottomNavigation = () => {
         <Link 
           to="/account" 
           className={`flex flex-col items-center justify-center py-3 ${
-            isActive('/account') ? 'text-klinkara-primary scale-110' : 'text-klinkara-text'
-          } transition-all duration-200`}
+            isActive('/account') ? 'text-klinkara-primary scale-110' : 'text-klinkara-text hover:text-klinkara-accent'
+          } transition-all duration-300`}
         >
           <User size={22} className={isActive('/account') ? 'animate-fade-in' : ''} />
           <span className="text-xs mt-1 font-medium">Account</span>
