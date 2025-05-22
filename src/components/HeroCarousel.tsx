@@ -13,21 +13,22 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    imageUrl: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+        imageUrl: "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895761/Screenshot_2025-05-22_120246_nrbm92.png",
+
     title: "Kanchipuram Silk Collection",
     subtitle: "Handcrafted luxury for your special moments",
     buttonText: "Shop Now",
     link: "/shop?category=kanchipuram",
   },
   {
-    imageUrl: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl: "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895763/Screenshot_2025-05-22_120234_elotjo.png",
     title: "Wedding Season",
     subtitle: "Premium bridal sarees for your special day",
     buttonText: "View Collection",
     link: "/premium",
   },
   {
-    imageUrl: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl: "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895760/Screenshot_2025-05-22_120121_jqy83g.png",
     title: "Festive Collection",
     subtitle: "Celebrate with elegance & tradition",
     buttonText: "Explore",
@@ -103,7 +104,7 @@ const HeroCarousel: React.FC = () => {
 
   return (
     <div 
-      className="relative w-full h-[85vh] md:h-[70vh] overflow-hidden"
+      className="relative w-full h-[35vh] md:h-[70vh] overflow-hidden"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}

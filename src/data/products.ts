@@ -21,42 +21,42 @@ export const categories: Category[] = [
     id: "kanchipuram",
     name: "Kanchipuram Silk",
     description: "Luxurious silk sarees from Kanchipuram with intricate zari work",
-    imageUrl:       "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl:       "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895149/Screenshot_2025-05-22_115459_uyaj0v.png",
 
   },
   {
     id: "banarasi",
     name: "Banarasi Silk",
     description: "Opulent silk sarees with ornate designs from Varanasi",
-    imageUrl:       "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl:       "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895149/Screenshot_2025-05-22_115459_uyaj0v.png",
 
   },
   {
     id: "patola",
     name: "Patola",
     description: "Double ikat woven sarees from Gujarat with geometric patterns",
-    imageUrl:       "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl:       "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895149/Screenshot_2025-05-22_115459_uyaj0v.png",
 
   },
   {
     id: "chanderi",
     name: "Chanderi",
     description: "Lightweight sarees with shimmering texture from Madhya Pradesh",
-    imageUrl:      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl:      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895149/Screenshot_2025-05-22_115459_uyaj0v.png",
 
   },
   {
     id: "sambalpuri",
     name: "Sambalpuri",
     description: "Traditional tie and dye sarees from Odisha",
-    imageUrl:       "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl:       "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895149/Screenshot_2025-05-22_115459_uyaj0v.png",
 
   },
   {
     id: "pochampally",
     name: "Pochampally Ikat",
     description: "Geometric patterned ikat sarees from Telangana",
-    imageUrl:       "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl:       "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895149/Screenshot_2025-05-22_115459_uyaj0v.png",
 
   }
 ];
@@ -77,8 +77,8 @@ export const products: Product[] = [
       "Handwoven by master artisans"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
     ]
   },
   {
@@ -95,8 +95,8 @@ export const products: Product[] = [
       "Handwoven by master artisans"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
     ]
   },
   {
@@ -113,8 +113,8 @@ export const products: Product[] = [
       "Handwoven by master artisans"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
     ]
   },
   {
@@ -131,8 +131,8 @@ export const products: Product[] = [
       "Handwoven by master artisans"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
     ]
   },
   {
@@ -149,8 +149,8 @@ export const products: Product[] = [
       "Handwoven by master artisans"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
     ]
   },
   
@@ -169,8 +169,8 @@ export const products: Product[] = [
       "Handwoven in Varanasi"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3"
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png"
     ]
   },
   {
@@ -187,8 +187,8 @@ export const products: Product[] = [
       "Handwoven in Varanasi"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
     ]
   },
   {
@@ -205,8 +205,8 @@ export const products: Product[] = [
       "Handwoven in Varanasi"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
     ]
   },
   {
@@ -223,8 +223,8 @@ export const products: Product[] = [
       "Handwoven in Varanasi"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
     ]
   },
   {
@@ -241,8 +241,8 @@ export const products: Product[] = [
       "Handwoven in Varanasi"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
     ]
   },
   
@@ -261,8 +261,8 @@ export const products: Product[] = [
       "Handwoven in Gujarat"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
     ]
   },
   {
@@ -279,8 +279,8 @@ export const products: Product[] = [
       "Handwoven in Madhya Pradesh"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
     ]
   },
   {
@@ -297,8 +297,8 @@ export const products: Product[] = [
       "Handwoven in Odisha"
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
     ]
   },
   {
@@ -316,8 +316,8 @@ export const products: Product[] = [
       
     ],
     imageUrls: [
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
+      "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895639/Screenshot_2025-05-22_120224_rrttjg.png",
     ]
   }
 ];
