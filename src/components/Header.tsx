@@ -124,7 +124,7 @@ const Header = () => {
             {/* Account icon - visible on desktop */}
             <Link
               to="/account"
-              className={hidden md:block ${getIconClasses()}}
+              className={`hidden md:block ${getIconClasses()}`}
               aria-label="Account"
             >
               <User size={22} />
