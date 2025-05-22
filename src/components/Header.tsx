@@ -106,13 +106,13 @@ const Header = () => {
           {/* Right side icons */}
           <div className="flex items-center gap-4">
             {/* Mobile menu button - only visible on mobile */}
-            <button
+            {/* <button
               onClick={toggleMenu}
               className={`md:hidden ${getIconClasses()}`}
               aria-label="Open Menu"
             >
               <Menu size={24} />
-            </button>
+            </button> */}
 
             <button
               onClick={toggleSearch}
@@ -178,7 +178,7 @@ const Header = () => {
       </header>
 
       {/* Mobile Navigation Menu */}
-      <div
+      {/* <div
         className={`fixed top-0 left-0 h-full w-4/5 max-w-xs bg-white z-[110] transform transition-transform duration-300 ease-in-out ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         } shadow-lg md:hidden`}
@@ -221,16 +221,16 @@ const Header = () => {
             ))}
           </ul>
         </nav>
-      </div>
+      </div> */}
 
       {/* Backdrop for mobile menu */}
-      {isMenuOpen && (
+      {/* {isMenuOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-[105] md:hidden"
           onClick={toggleMenu}
           aria-hidden="true"
         />
-      )}
+      )} */}
     </>
   );
 };
