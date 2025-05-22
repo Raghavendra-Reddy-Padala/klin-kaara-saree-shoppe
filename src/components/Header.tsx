@@ -1,173 +1,193 @@
-import React, { useState, useEffect, useRef, TouchEvent } from 'react';
-import { Link } from 'react-router-dom';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, Search, ShoppingCart, X } from 'lucide-react';
+import { useCart } from '@/contexts/CartContext';
 
-interface Slide {
-  imageUrl: string;
-  title: string;
-  subtitle: string;
-  buttonText: string;
-  link: string;
-}
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+  const { getCartCount } = useCart();
+  const location = useLocation();
 
-const slides: Slide[] = [
-  {
-    imageUrl: "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895761/Screenshot_2025-05-22_120246_nrbm92.png",
-    title: "Kanchipuram Silk Collection",
-    subtitle: "Handcrafted luxury for your special moments",
-    buttonText: "Shop Now",
-    link: "/shop?category=kanchipuram",
-  },
-  {
-    imageUrl: "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895763/Screenshot_2025-05-22_120234_elotjo.png",
-    title: "Wedding Season",
-    subtitle: "Premium bridal sarees for your special day",
-    buttonText: "View Collection",
-    link: "/premium",
-  },
-  {
-    imageUrl: "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895760/Screenshot_2025-05-22_120121_jqy83g.png",
-    title: "Festive Collection",
-    subtitle: "Celebrate with elegance & tradition",
-    buttonText: "Explore",
-    link: "/shop",
-  },
-];
+  const cartCount = getCartCount();
+  const isHomePage = location.pathname === '/';
 
-const HeroCarousel: React.FC = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const touchStartX = useRef<number | null>(null);
-  const touchEndX = useRef<number | null>(null);
-  const minSwipeDistance = 50;
-
-  const goToSlide = (index: number) => {
-    if (isAnimating) return;
-    
-    setIsAnimating(true);
-    setCurrentSlide(index);
-    
-    setTimeout(() => {
-      setIsAnimating(false);
-    }, 500); // Match this with the transition duration in CSS
-  };
-
-  const goToNextSlide = () => {
-    goToSlide((currentSlide + 1) % slides.length);
-  };
-
-  const goToPrevSlide = () => {
-    goToSlide((currentSlide - 1 + slides.length) % slides.length);
-  };
-
-  // Handle touch events for swiping
-  const onTouchStart = (e: TouchEvent) => {
-    touchStartX.current = e.targetTouches[0].clientX;
-  };
-
-  const onTouchMove = (e: TouchEvent) => {
-    touchEndX.current = e.targetTouches[0].clientX;
-  };
-
-  const onTouchEnd = () => {
-    if (!touchStartX.current || !touchEndX.current) return;
-    
-    const distance = touchStartX.current - touchEndX.current;
-    const isSwipe = Math.abs(distance) > minSwipeDistance;
-    
-    if (isSwipe) {
-      // Swipe left, go to next slide
-      if (distance > 0) {
-        goToNextSlide();
-      }
-      // Swipe right, go to previous slide
-      else {
-        goToPrevSlide();
-      }
-    }
-    
-    // Reset values
-    touchStartX.current = null;
-    touchEndX.current = null;
-  };
-
-  // Auto-advance slides
   useEffect(() => {
-    const interval = setInterval(() => {
-      goToNextSlide();
-    }, 5000);
-    
-    return () => clearInterval(interval);
-  }, [currentSlide]);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Search query:', searchQuery);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleSearch = () => {
+    setShowSearch(!showSearch);
+  };
+
+  // Determine header styling based on home page and scroll state
+  const getHeaderClasses = () => {
+    if (isHomePage && !isScrolled) {
+      return 'fixed top-0 left-0 w-full z-[100] bg-transparent backdrop-blur-sm transition-all duration-300';
+    }
+    return 'fixed top-0 left-0 w-full z-[100] bg-white shadow-md transition-all duration-300';
+  };
+
+  // Determine icon colors based on home page and scroll state
+  const getIconClasses = () => {
+    if (isHomePage && !isScrolled) {
+      return 'text-white hover:text-gray-200 transition-colors duration-300';
+    }
+    return 'text-klinkara-text hover:text-klinkara-primary transition-colors duration-300';
+  };
 
   return (
-    <div 
-      className="relative w-full h-[35vh] md:h-[70vh] overflow-hidden mt-0"
-      onTouchStart={onTouchStart}
-      onTouchMove={onTouchMove}
-      onTouchEnd={onTouchEnd}
-    >
-      {/* Slides */}
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
-            index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
-          }`}
-          style={{
-            backgroundImage: `url(${slide.imageUrl})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        >
-          {/* Slide Content */}
-          <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center px-4 pt-16 md:pt-20">
-            <h2 className="text-3xl font-bold text-white mb-2 animate-fade-in">
-              {slide.title}
-            </h2>
-            <p className="text-lg text-white mb-6 animate-fade-in">
-              {slide.subtitle}
-            </p>
-            <Link to={slide.link}>
-              <button className="bg-klinkara-primary hover:bg-klinkara-accent text-white font-medium py-2 px-6 rounded-md transition-all duration-300 transform hover:scale-105 animate-scale-in">
-                {slide.buttonText}
-              </button>
+    <>
+      <header className={getHeaderClasses()}>
+        <div className="flex items-center justify-between px-4 py-3">
+          {/* Logo - moved to left */}
+          <Link to="/" className="flex items-center">
+            <img
+              src="https://res.cloudinary.com/djyny0qqn/image/upload/v1747326621/DB0548_1_Final-removebg-preview_romx1s.png"
+              alt="KlinKaaRa Logo"
+              className={`h-10 transition-all duration-300 ${
+                isHomePage && !isScrolled ? 'brightness-0 invert' : ''
+              }`}
+            />
+          </Link>
+
+          {/* Spacer to push icons to right */}
+          <div className="flex-1"></div>
+
+          {/* Icons: Menu + Search + Cart */}
+          <div className="flex items-center gap-4">
+            <button
+              onClick={toggleMenu}
+              className={getIconClasses()}
+              aria-label="Open Menu"
+            >
+              {/* <Menu size={24} /> */}
+            </button>
+
+            <button
+              onClick={toggleSearch}
+              className={getIconClasses()}
+              aria-label="Toggle Search"
+            >
+              <Search size={20} />
+            </button>
+
+            <Link to="/cart" className="relative">
+              <ShoppingCart
+                size={22}
+                className={getIconClasses()}
+              />
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-klinkara-primary text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                  {cartCount}
+                </span>
+              )}
             </Link>
           </div>
         </div>
-      ))}
 
-      {/* Navigation Arrows - Hidden on mobile */}
-      <button
-        className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 bg-black bg-opacity-30 hover:bg-opacity-50 text-white p-2 rounded-md transition-all hidden md:block"
-        onClick={goToPrevSlide}
-        aria-label="Previous Slide"
-      >
-        <ChevronLeft size={24} />
-      </button>
-      <button
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 bg-black bg-opacity-30 hover:bg-opacity-50 text-white p-2 rounded-md transition-all hidden md:block"
-        onClick={goToNextSlide}
-        aria-label="Next Slide"
-      >
-        <ChevronRight size={24} />
-      </button>
+        {/* Conditional Search Input */}
+        {showSearch && (
+          <div className={`px-4 pb-2 ${
+            isHomePage && !isScrolled ? 'bg-black bg-opacity-20' : 'bg-white'
+          }`}>
+            <form onSubmit={handleSearch} className="relative">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search for sarees..."
+                className={`w-full py-2 px-4 pr-10 text-sm focus:outline-none transition-all duration-300 ${
+                  isHomePage && !isScrolled
+                    ? 'bg-white bg-opacity-20 text-white placeholder-gray-200 border border-white border-opacity-30 focus:border-white'
+                    : 'placeholder-gray-500 border border-gray-600 focus:border-gray-500'
+                }`}
+              />
+              <button
+                type="submit"
+                className={`absolute right-0 top-0 h-full px-3 transition-colors duration-300 ${
+                  isHomePage && !isScrolled
+                    ? 'text-white hover:text-gray-200'
+                    : 'text-gray-300 hover:text-white'
+                }`}
+                aria-label="Search"
+              >
+                <Search size={18} />
+              </button>
+            </form>
+          </div>
+        )}
+      </header>
 
-      {/* Pagination Indicators */}
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center z-20">
-        {slides.map((_, index) => (
+      {/* Mobile Navigation Menu */}
+      {/* <div
+        className={`fixed top-0 left-0 h-full w-4/5 max-w-xs bg-white z-[110] transform transition-transform duration-300 ease-in-out ${
+          isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        } shadow-lg`}
+      >
+        <div className="flex items-center justify-between p-4 border-b border-klinkara-secondary">
+          <h2 className="text-lg font-medium text-klinkara-text">Menu</h2>
           <button
-            key={index}
-            className={`mx-1 w-2 h-2 rounded-full bg-white transition-all ${
-              index === currentSlide ? 'w-6 bg-klinkara-primary' : 'bg-opacity-60'
-            }`}
-            onClick={() => goToSlide(index)}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
-    </div>
+            onClick={toggleMenu}
+            className="text-klinkara-text hover:text-klinkara-primary transition-colors duration-300"
+            aria-label="Close Menu"
+          >
+            <X size={24} className="hover:rotate-90 transition-transform duration-300" />
+          </button>
+        </div>
+
+        <nav className="py-4">
+          <ul className="space-y-1">
+            {[
+              { to: '/', label: 'Home' },
+              { to: '/shop', label: 'Shop All' },
+              { to: '/premium', label: 'Premium Collection' },
+              { to: '/cart', label: 'Cart' },
+              { to: '/wishlist', label: 'Wishlist' },
+              { to: '/account', label: 'Account' },
+              { to: '/contact', label: 'Contact Us' },
+              { to: '/privacy-policy', label: 'Privacy Policy' },
+            ].map(({ to, label }) => (
+              <li key={to}>
+                <Link
+                  to={to}
+                  onClick={toggleMenu}
+                  className="block px-4 py-3 text-klinkara-text hover:bg-gray-50 hover:text-klinkara-primary transition-all duration-300"
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div> */}
+
+      {/* Backdrop for mobile menu */}
+      {/* {isMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-[105]"
+          onClick={toggleMenu}
+          aria-hidden="true"
+        />
+      )} */}
+    </>
   );
 };
 
-export default HeroCarousel;
+export default Header;

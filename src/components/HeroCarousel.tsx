@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef, TouchEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -13,8 +12,7 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-        imageUrl: "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895761/Screenshot_2025-05-22_120246_nrbm92.png",
-
+    imageUrl: "https://res.cloudinary.com/dabmrzlji/image/upload/v1747895761/Screenshot_2025-05-22_120246_nrbm92.png",
     title: "Kanchipuram Silk Collection",
     subtitle: "Handcrafted luxury for your special moments",
     buttonText: "Shop Now",
@@ -124,14 +122,14 @@ const HeroCarousel: React.FC = () => {
         >
           {/* Slide Content */}
           <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center px-4">
-            <h2 className="text-3xl font-bold text-white mb-2 animate-fade-in">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-4 animate-fade-in">
               {slide.title}
             </h2>
-            <p className="text-lg text-white mb-6 animate-fade-in">
+            <p className="text-base md:text-lg lg:text-xl text-white mb-6 max-w-2xl animate-fade-in">
               {slide.subtitle}
             </p>
             <Link to={slide.link}>
-              <button className="bg-klinkara-primary hover:bg-klinkara-accent text-white font-medium py-2 px-6 rounded-md transition-all duration-300 transform hover:scale-105 animate-scale-in">
+              <button className="bg-klinkara-primary hover:bg-klinkara-accent text-white font-medium py-3 px-8 rounded-md transition-all duration-300 transform hover:scale-105 animate-scale-in text-sm md:text-base">
                 {slide.buttonText}
               </button>
             </Link>
