@@ -105,15 +105,6 @@ const Header = () => {
 
           {/* Right side icons */}
           <div className="flex items-center gap-4">
-            {/* Mobile menu button - only visible on mobile */}
-            {/* <button
-              onClick={toggleMenu}
-              className={`md:hidden ${getIconClasses()}`}
-              aria-label="Open Menu"
-            >
-              <Menu size={24} />
-            </button> */}
-
             <button
               onClick={toggleSearch}
               className={getIconClasses()}
@@ -130,7 +121,6 @@ const Header = () => {
                 </span>
               )}
             </Link>
-
             {/* Account icon - visible on desktop */}
             <Link
               to="/account"
@@ -176,61 +166,6 @@ const Header = () => {
           </div>
         )}
       </header>
-
-      {/* Mobile Navigation Menu */}
-      {/* <div
-        className={`fixed top-0 left-0 h-full w-4/5 max-w-xs bg-white z-[110] transform transition-transform duration-300 ease-in-out ${
-          isMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } shadow-lg md:hidden`}
-      >
-        <div className="flex items-center justify-between p-4 border-b border-klinkara-secondary">
-          <h2 className="text-lg font-medium text-klinkara-text">Menu</h2>
-          <button
-            onClick={toggleMenu}
-            className="text-klinkara-text hover:text-klinkara-primary transition-colors duration-300"
-            aria-label="Close Menu"
-          >
-            <X
-              size={24}
-              className="hover:rotate-90 transition-transform duration-300"
-            />
-          </button>
-        </div>
-
-        <nav className="py-4">
-          <ul className="space-y-1">
-            {[
-              { to: "/", label: "Home" },
-              { to: "/shop", label: "Shop All" },
-              { to: "/premium", label: "Premium Collection" },
-              { to: "/wishlist", label: "Wishlist" },
-              { to: "/cart", label: "Cart" },
-              { to: "/account", label: "Account" },
-              { to: "/contact", label: "Contact Us" },
-              { to: "/privacy-policy", label: "Privacy Policy" },
-            ].map(({ to, label }) => (
-              <li key={to}>
-                <Link
-                  to={to}
-                  onClick={toggleMenu}
-                  className="block px-4 py-3 text-klinkara-text hover:bg-gray-50 hover:text-klinkara-primary transition-all duration-300"
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div> */}
-
-      {/* Backdrop for mobile menu */}
-      {/* {isMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-[105] md:hidden"
-          onClick={toggleMenu}
-          aria-hidden="true"
-        />
-      )} */}
     </>
   );
 };
