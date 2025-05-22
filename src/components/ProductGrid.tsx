@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ProductCard from './ProductCard';
 import { Product } from '@/data/products';
@@ -12,7 +11,7 @@ interface ProductGridProps {
 const ProductGrid: React.FC<ProductGridProps> = ({ products, loading = false }) => {
   if (loading) {
     return (
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4">
         {Array(6).fill(0).map((_, index) => (
           <ProductCardSkeleton key={index} />
         ))}
@@ -30,7 +29,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, loading = false }) 
   }
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4">
       {products.map((product, index) => (
         <div 
           key={product.id} 

@@ -46,10 +46,11 @@ const App = () => {
         <AuthProvider>
           <CartProvider>
             <WishlistProvider>
-              <Toaster />
+              
               <Sonner />
               <BrowserRouter>
                 <Header />
+                <Toaster />
                 <main className="min-h-[calc(100vh-88px)] pb-16 md:pb-0 bg-white">
                   {showBanner && <PromotionalBanner onClose={closeBanner} />}
                   <Routes>

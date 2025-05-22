@@ -18,7 +18,7 @@ const formatPrice = (price: number) => {
 };
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  const { isInWishlist, addToWishlist, removeFromWishlist } = useWishlist();
+  const { isInWishlist, addToWishlist, removeFromWishlist } = useWishlist(); 
   const isWishlisted = isInWishlist(product.id);
 
   const toggleWishlist = (e: React.MouseEvent) => {
@@ -37,8 +37,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       to={`/product/${product.id}`} 
       className="block h-full"
     >
-      <div className="product-card overflow-hidden group h-full flex flex-col">
-        <div className="relative h-0 pb-[125%] overflow-hidden bg-gray-50 rounded-t-lg">
+      <div className="shadow-md shadow-gray-300 overflow-hidden group h-full flex flex-col">
+        <div className="relative h-0 pb-[125%] overflow-hidden bg-gray-50 -t-lg">
           <img 
             src={product.imageUrls[0]} 
             alt={product.name} 
