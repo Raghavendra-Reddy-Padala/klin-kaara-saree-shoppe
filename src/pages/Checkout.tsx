@@ -34,6 +34,27 @@ const Checkout = () => {
     email: '',
   });
 
+  // Helper function to get user's display name
+  const getUserDisplayName = () => {
+    if (!user) return "";
+    return user.user_metadata?.full_name || 
+           user.user_metadata?.name || 
+           user.email?.split('@')[0] || 
+           "";
+  };
+
+  // Helper function to parse name into first and last
+  const parseUserName = () => {
+    const fullName = getUserDisplayName();
+    if (!fullName) return { firstName: '', lastName: '' };
+    
+    const nameParts = fullName.split(' ');
+    return {
+      firstName: nameParts[0] || '',
+      lastName: nameParts.slice(1).join(' ') || ''
+    };
+  };
+
   useEffect(() => {
     // Redirect to login if not authenticated
     if (!isAuthenticated) {
@@ -46,11 +67,12 @@ const Checkout = () => {
 
     // Pre-fill email from user data if available
     if (user) {
+      const { firstName, lastName } = parseUserName();
       setShippingDetails(prev => ({
         ...prev,
-        email: user.email,
-        firstName: user.name ? user.name.split(' ')[0] : '',
-        lastName: user.name ? user.name.split(' ').slice(1).join(' ') : '',
+        email: user.email || '',
+        firstName,
+        lastName,
       }));
     }
   }, [isAuthenticated, user, navigate]);

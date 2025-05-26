@@ -29,6 +29,15 @@ const Account = () => {
 
   const [showRegister, setShowRegister] = useState(false);
 
+  // Helper function to get user's display name
+  const getUserDisplayName = () => {
+    if (!user) return "User";
+    return user.user_metadata?.full_name || 
+           user.user_metadata?.name || 
+           user.email?.split('@')[0] || 
+           "User";
+  };
+
   const handleLoginChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setLoginForm(prev => ({ ...prev, [name]: value }));
@@ -272,7 +281,7 @@ const Account = () => {
           <UserRound size={40} className="text-klinkara-primary" />
         </div>
         <h1 className="text-2xl font-bold text-klinkara-text">My Account</h1>
-        <p className="text-gray-600">Welcome back, {user?.name || "User"}!</p>
+        <p className="text-gray-600">Welcome back, {getUserDisplayName()}!</p>
       </div>
       
       <div className="border border-klinkara-secondary bg-white mb-8">
@@ -302,7 +311,7 @@ const Account = () => {
             <div className="space-y-4">
               <div>
                 <span className="text-sm text-gray-500">Name</span>
-                <p className="font-medium text-klinkara-text">{user?.name || "N/A"}</p>
+                <p className="font-medium text-klinkara-text">{getUserDisplayName()}</p>
               </div>
               <div>
                 <span className="text-sm text-gray-500">Email</span>
