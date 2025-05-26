@@ -1,14 +1,18 @@
+
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, Search, ShoppingCart, X, User } from "lucide-react";
+import { Menu, Search, ShoppingCart, X, User, LogOut } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
+import { useAuth } from "@/contexts/AuthContext";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const [showUserMenu, setShowUserMenu] = useState(false);
   const { getCartCount } = useCart();
+  const { isAuthenticated, user, logout } = useAuth();
   const location = useLocation();
 
   const cartCount = getCartCount();
@@ -34,6 +38,11 @@ const Header = () => {
 
   const toggleSearch = () => {
     setShowSearch(!showSearch);
+  };
+
+  const handleLogout = async () => {
+    await logout();
+    setShowUserMenu(false);
   };
 
   // Desktop navigation items
@@ -121,14 +130,49 @@ const Header = () => {
                 </span>
               )}
             </Link>
-            {/* Account icon - visible on desktop */}
-            <Link
-              to="/account"
-              className={`hidden md:block ${getIconClasses()}`}
-              aria-label="Account"
-            >
-              <User size={22} />
-            </Link>
+
+            {/* User Account */}
+            {isAuthenticated ? (
+              <div className="relative">
+                <button
+                  onClick={() => setShowUserMenu(!showUserMenu)}
+                  className={`hidden md:block ${getIconClasses()}`}
+                  aria-label="User Menu"
+                >
+                  <User size={22} />
+                </button>
+                
+                {showUserMenu && (
+                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                    <div className="px-4 py-2 text-sm text-gray-700 border-b">
+                      {user?.email}
+                    </div>
+                    <Link
+                      to="/account"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => setShowUserMenu(false)}
+                    >
+                      My Account
+                    </Link>
+                    <button
+                      onClick={handleLogout}
+                      className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      <LogOut size={16} className="mr-2" />
+                      Logout
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                to="/auth"
+                className={`hidden md:block ${getIconClasses()}`}
+                aria-label="Login"
+              >
+                <User size={22} />
+              </Link>
+            )}
           </div>
         </div>
 
